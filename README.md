@@ -14,4 +14,4 @@ python ./src/preprocess.py --out <Output directory> --pos <Positive samples file
 ----------------Training and evaluation---------------------------------
   
  
-python train.py --out <Output directory> --seq data_onehot.npy --label label.npy --val 0.1 <--random 0.1> <--fold 10>
+python ./src/train.py --out <Output directory> --seq data_onehot.npy --label label.npy --val 0.1 <--random 0.1> <--fold 10>
