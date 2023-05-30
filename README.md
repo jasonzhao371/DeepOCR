@@ -4,4 +4,6 @@ INSTALLATION To run DeepOCR: First install scikit-learn (http://scikit-learn.org
 
 
 ----------------Preprocessing---------------------------------
+
+
 python ./src/preprocess.py --out <Output directory> --pos <Positive samples file(.fa)> --neg <Negative samples file(.fa)>
