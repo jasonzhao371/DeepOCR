@@ -1,0 +1,1 @@
+GRCg6a:https://ftp.ensembl.org/pub/release-109/fasta/gallus_gallus_gca000002315v5/dna/
