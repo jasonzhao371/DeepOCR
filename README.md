@@ -20,13 +20,20 @@ python ./src/preprocess.py --out <Output directory> --pos <Positive samples file
 
 ## Arguments:
   Output directory: the output file path of the final processed data(npy format)
-  ```
-  Positive samples file: positive samples(.fa)
-  e.g.>Chr1:37877-38336()
-       AAAGTTTATTTGAGGCTGGAACAGCACCAAGGGTATAAATGGAAAAAACAGAAGT
   
+  Positive samples file: positive samples(.fa)
+  ```
+  e.g.
+  >Chr:start-end
+   AAAGTTTATTTGAGGCTGGAACAGCACCAAGGGTATAAATGGAAAAAACAGAAGT...
+  ```
   Negative samples file: negative samples(.fa)
- ```
+  ```
+  e.g.
+  >Chr:start-end
+   AGGTGTTAACTTTTAAAGAAGAATATATTAAGTTATGCCTACCGTGGAATAAGGT...
+  ```
+ 
 
 ## Notes:
 IF your input file is in bed format,first you need to extract the fasta sequence using bedtools.
