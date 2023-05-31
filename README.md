@@ -1,4 +1,5 @@
-# DeepOCR:a multi-species deep learning-based frame-work for accurate identification of open chromatin regions in livestock
+# DeepOCR:
+a multi-species deep learning-based frame-work for accurate identification of open chromatin regions in livestock
 
 ## INSTALLATION 
 git clone https://github.com/jasonzhao371/DeepOCR/
