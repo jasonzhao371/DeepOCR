@@ -39,7 +39,7 @@ IF your input file is in bed format,first you need to extract the fasta sequence
 ```
 $ bedtools getfasta -fi <Reference Genome> -bed <your bed format file> -s -fo <Output file>
 ```
-It will output two files including the sequence encoding file and the label encoding file
+It will output two files including the sequence encoding file and the label encoding file in the output directory 
 
 ## Training and evaluation
   
