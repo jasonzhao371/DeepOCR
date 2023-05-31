@@ -20,15 +20,17 @@ python ./src/preprocess.py --out <Output directory> --pos <Positive samples file
 
 ## Arguments:
   Output directory:The output file path of the final processed data(npy format)
+  
   Positive samples file:positive samples(.fa)
+  
   Negative samples file:negative samples(.fa)
 
 
 ### Notes:
-    IF your input file is in bed format,first you need to extract the fasta sequence using the tool bedtools.
-    e.g
-    $ bedtools getfasta -fi <Reference Genome> -bed <your bed format file> -s -fo <Output file>
-
+IF your input file is in bed format,first you need to extract the fasta sequence using the tool bedtools.
+```
+$ bedtools getfasta -fi <Reference Genome> -bed <your bed format file> -s -fo <Output file>
+```
 # Training and evaluation
   
 ```shell
