@@ -7,9 +7,7 @@ git clone https://github.com/jasonzhao371/DeepOCR/
 - Scikit-learn(http://scikit-learn.org/)
 - tensorflow-gpu (https://pypi.org/project/tensorflow-gpu/)
 - bedtools
-
-
-
+- h5py
 
 # Preprocessing
 
@@ -21,6 +19,7 @@ python ./src/preprocess.py --out <Output directory> --pos <Positive samples file
 ## Arguments:
   
   Output directory: the output file path of the final processed data(npy format)
+  
   
   Positive samples file: positive samples(.fa)
   
@@ -42,12 +41,38 @@ IF your input file is in bed format,first you need to extract the fasta sequence
 ```
 $ bedtools getfasta -fi <Reference Genome> -bed <your bed format file> -s -fo <Output file>
 ```
+It will output two files including the sequence encoding file and the label encoding file
 
 # Training and evaluation
   
 ```shell
-python ./src/train.py --out <Output directory> --seq data_onehot.npy --label label.npy --val 0.1 <--random 0.1> <--fold 10>
+python ./src/train.py --out <Output directory> --seq <sequence encoding file> --label <label encoding file> --val 0.1 <--random 0.1> <--fold 10>
 ```
-```
-arguments:
-  Output directory:
+## Arguments:
+  
+  Output directory: the output path of the model 
+  
+  
+  sequence encoding file: one of the preprocessed output files
+  
+  label encoding file: one of the preprocessed output files
+  
+  --val: the proportion of the validation
+  
+  --random: proportion of test sets in random splitting
+  
+  --fold: number of folds for cross validation
+  
+  
+  
+  ```
+  e.g.
+  >Chr:start-end
+   AAAGTTTATTTGAGGCTGGAACAGCACCAAGGGTATAAATGGAAAAAACAGAAGT...
+  ```
+  Negative samples file: negative samples(.fa)
+  ```
+  e.g.
+  >Chr:start-end
+   AGGTGTTAACTTTTAAAGAAGAATATATTAAGTTATGCCTACCGTGGAATAAGGT...
+  ```
