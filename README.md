@@ -57,9 +57,9 @@ python ./src/train.py --out <Output directory> --seq <sequence encoding file> --
   
   --val: the proportion of the validation
   
-  --random: proportion of test sets in random splitting
+  --random: proportion of test sets in random splitting(optional)
   
-  --fold: number of folds for cross validation
+  --fold: number of folds for cross validation( optional)
   
   
  
