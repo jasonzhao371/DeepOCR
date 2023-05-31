@@ -16,7 +16,7 @@ python ./src/preprocess.py --out <output directory> --pos <positive samples file
 ```
 
 
-### Arguments:
+### Arguments
   
 output directory: the output file path of the final processed data(npy format)
   
@@ -34,7 +34,7 @@ negative samples file: negative samples(.fa)
   AGGTGTTAACTTTTAAAGAAGAATATATTAAGTTATGCCTACCGTGGAATAAGGT...
  ```
  
-### Notes:
+### Notes
 IF your input file is in bed format,first you need to extract the fasta sequence using bedtools.
 ```
 $ bedtools getfasta -fi <Reference Genome> -bed <your bed format file> -s -fo <Output file>
@@ -46,7 +46,7 @@ It will output two files including the sequence encoding file and the label enco
 ```shell
 python ./src/train.py --out <output directory> --seq <sequence encoding file> --label <label encoding file> --val 0.1 <--random 0.1> <--fold 10>
 ```
-### Arguments:
+### Arguments
 
 output directory: the output path of the model 
   
@@ -60,7 +60,11 @@ label encoding file: one of the preprocessed output files
   
 --fold: number of folds for cross validation( optional)
 
-### Notes:
+### Notes
 It will output the trained model in the output directory
-  
+
+## Prediction
+```shell
+python ./src/predict.py --out <output directory> --seq <sequence> --model <model file>
+```  
  
