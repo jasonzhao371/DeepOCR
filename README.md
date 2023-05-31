@@ -12,29 +12,28 @@ git clone https://github.com/jasonzhao371/DeepOCR/
 ## Preprocessing
 
 ```shell
-python ./src/preprocess.py --out <Output directory> --pos <Positive samples file> --neg <Negative samples file>
+python ./src/preprocess.py --out <output directory> --pos <positive samples file> --neg <negative samples file>
 ```
 
 
 ### Arguments:
   
-  Output directory: the output file path of the final processed data(npy format)
+output directory: the output file path of the final processed data(npy format)
   
-  Positive samples file: positive samples(.fa)
+positive samples file: positive samples(.fa)
   
-  ```
-  e.g.
-  >Chr:start-end
-   AAAGTTTATTTGAGGCTGGAACAGCACCAAGGGTATAAATGGAAAAAACAGAAGT...
-  ```
-  Negative samples file: negative samples(.fa)
-  ```
-  e.g.
-  >Chr:start-end
-   AGGTGTTAACTTTTAAAGAAGAATATATTAAGTTATGCCTACCGTGGAATAAGGT...
-  ```
+ ```
+ e.g.
+ >Chr:start-end
+  AAAGTTTATTTGAGGCTGGAACAGCACCAAGGGTATAAATGGAAAAAACAGAAGT...
+ ```
+negative samples file: negative samples(.fa)
+ ```
+ e.g.
+ >Chr:start-end
+  AGGTGTTAACTTTTAAAGAAGAATATATTAAGTTATGCCTACCGTGGAATAAGGT...
+ ```
  
-
 ### Notes:
 IF your input file is in bed format,first you need to extract the fasta sequence using bedtools.
 ```
@@ -45,21 +44,23 @@ It will output two files including the sequence encoding file and the label enco
 ## Training and evaluation
   
 ```shell
-python ./src/train.py --out <Output directory> --seq <sequence encoding file> --label <label encoding file> --val 0.1 <--random 0.1> <--fold 10>
+python ./src/train.py --out <output directory> --seq <sequence encoding file> --label <label encoding file> --val 0.1 <--random 0.1> <--fold 10>
 ```
 ### Arguments:
 
-  Output directory: the output path of the model 
+output directory: the output path of the model 
   
-  sequence encoding file: one of the preprocessed output files
+sequence encoding file: one of the preprocessed output files
   
-  label encoding file: one of the preprocessed output files
+label encoding file: one of the preprocessed output files
   
-  --val: the proportion of the validation
+--val: the proportion of the validation
   
-  --random: proportion of test sets in random splitting(optional)
+--random: proportion of test sets in random splitting(optional)
   
-  --fold: number of folds for cross validation( optional)
-  
+--fold: number of folds for cross validation( optional)
+
+### Notes:
+It will output the trained model in the output directory
   
  
