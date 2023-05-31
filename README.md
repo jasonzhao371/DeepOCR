@@ -49,9 +49,8 @@ It will output two files including the sequence encoding file and the label enco
 python ./src/train.py --out <Output directory> --seq <sequence encoding file> --label <label encoding file> --val 0.1 <--random 0.1> <--fold 10>
 ```
 ## Arguments:
-  
+  ```
   Output directory: the output path of the model 
-  
   
   sequence encoding file: one of the preprocessed output files
   
@@ -62,17 +61,7 @@ python ./src/train.py --out <Output directory> --seq <sequence encoding file> --
   --random: proportion of test sets in random splitting
   
   --fold: number of folds for cross validation
+  ```
   
   
-  
-  ```
-  e.g.
-  >Chr:start-end
-   AAAGTTTATTTGAGGCTGGAACAGCACCAAGGGTATAAATGGAAAAAACAGAAGT...
-  ```
-  Negative samples file: negative samples(.fa)
-  ```
-  e.g.
-  >Chr:start-end
-   AGGTGTTAACTTTTAAAGAAGAATATATTAAGTTATGCCTACCGTGGAATAAGGT...
-  ```
+ 
