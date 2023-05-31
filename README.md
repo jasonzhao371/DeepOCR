@@ -73,4 +73,6 @@ output directory: the output path of prediction
 sequence : the sequence to predict(.fa)
 
 model file: the trained model(.hdf5)
- 
+
+### Notes
+It will output the results in the output directory(0: nonOCRs,1:OCRs)
