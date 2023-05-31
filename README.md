@@ -19,7 +19,7 @@ python ./src/preprocess.py --out <Output directory> --pos <Positive samples file
 
 ```
 arguments:
-  Output directory:The output file path of the final processed data
+  Output directory:The output file path of the final processed data(npy format)
   Positive samples file:positive samples(.fa)
   Negative samples file:negative samples(.fa)
  
