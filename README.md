@@ -27,9 +27,7 @@ arguments:
 Notes:
 IF your input file is in bed format,first you need to extract the fasta sequence using the tool bedtools.
 e.g
-```shell
-bedtools getfasta -fi <Reference Genome> -bed <your bed format file> -s -fo <Output file>
-```
+$ bedtools getfasta -fi <Reference Genome> -bed <your bed format file> -s -fo <Output file>
 ```
 
 # Training and evaluation
