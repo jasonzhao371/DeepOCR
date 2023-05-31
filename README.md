@@ -1,11 +1,16 @@
-DeepOCR: a multi-species deep learning-based frame-work for accurate identification of open chromatin regions in livestock
+# DeepOCR:a multi-species deep learning-based frame-work for accurate identification of open chromatin regions in livestock
+
+# INSTALLATION 
+git clone https://github.com/jasonzhao371/DeepOCR/
+
+# Requirements
+- Scikit-learn(http://scikit-learn.org/)
+- tensorflow-gpu (https://pypi.org/project/tensorflow-gpu/)
 
 
-INSTALLATION To run DeepOCR: First install scikit-learn (http://scikit-learn.org/), tensorflow-gpu (https://pypi.org/project/tensorflow-gpu/)
 
 
-
-----------------Preprocessing---------------------------------
+# Preprocessing
 
 
 python ./src/preprocess.py --out <Output directory> --pos <Positive samples file(.fa)> --neg <Negative samples file(.fa)>
