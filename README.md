@@ -66,4 +66,11 @@ It will output the trained model in the output directory
 ```shell
 python ./src/predict.py --out <output directory> --seq <sequence> --model <model file>
 ```  
+### Arguments
+
+output directory: the output path of prediction 
+  
+sequence : the sequence to predict(.fa)
+
+model file: the trained model(.hdf5)
  
