@@ -21,7 +21,7 @@ tf.compat.v1.keras.backend.set_session(sess)
 
 def mode_DeepOCR():
     def DW_block(X, kernels, size):
-        out = tf.keras.layers.SeparableConv1D(kernels, size,depth_multiplier=1, padding='same',data_format="channels_last")(
+        out = tf.keras.layers.SeparableConv1D(filters, kernels,depth_multiplier=1, padding='same',data_format="channels_last")(
             X)
         #out = tf.keras.layers.Conv1D(kernels, size, padding='same')(X)
         out = tf.keras.layers.ReLU()(out)
