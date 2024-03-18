@@ -37,8 +37,8 @@ def mode_DeepOCR():
 
     inputs = tf.keras.layers.Input([1000, 4])
     x = tf.keras.layers.Conv1D(filters=300, kernel_size=19, padding="same")(inputs)
-    x = DW_block(x, kernels=200, size=11)
-    x = DW_block(x, kernels=100, size=9)
+    x = DW_block(x, filters=200, kernels=11)
+    x = DW_block(x, filters=100, kernels=9)
     x_output = tf.keras.layers.GlobalAveragePooling1D()(x)
     #add
     x_output =  tf.keras.layers.Dense(300, activation='relu')(x_output)
