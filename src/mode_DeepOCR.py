@@ -23,11 +23,11 @@ def mode_DeepOCR():
     def DW_block(X, kernels, size):
         out = tf.keras.layers.SeparableConv1D(filters, kernels,depth_multiplier=1, padding='same',data_format="channels_last")(
             X)
-        #out = tf.keras.layers.Conv1D(kernels, size, padding='same')(X)
+        #out = tf.keras.layers.Conv1D(filters, kernels, padding='same')(X)
         out = tf.keras.layers.ReLU()(out)
         #add
         #out = Dropout(rate=0.5)(out)
-        X_c = tf.keras.layers.Conv1D(kernels, 1, padding='same')(X)
+        X_c = tf.keras.layers.Conv1D(filters, 1, padding='same')(X)
         #out = tf.keras.layers.Conv1D(300, 1, padding='same')(out)
         out = tf.keras.layers.add([X_c, out])
         out = tf.keras.layers.ReLU()(out)
