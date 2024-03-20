@@ -14,13 +14,11 @@ git clone https://github.com/jasonzhao371/DeepOCR.git
 # Instructions
 
 ## Step 1.Preprocessing
-### It will output two files including the sequence encoding file and the label encoding file in the output directory.
-
 ```shell
 python ./src/preprocess.py --out <output directory> --pos <positive samples file> --neg <negative samples file>
 ```
-
-### Arguments
+### It will output two files including the sequence encoding file and the label encoding file in the output directory.
+#### Arguments
   
 output directory: the output file path of the final processed data(npy format)
   
@@ -37,17 +35,18 @@ negative samples file: negative samples(.fa)
  >Chr:start-end
   AGGTGTTAACTTTTAAAGAAGAATATATTAAGTTATGCCTACCGTGGAATAAGGT...
  ```
-### Notes
+#### Notes
 If your input file is in bed format,first you need to extract the fasta sequence using bedtools.
 ```
 $ bedtools getfasta -fi <Reference Genome> -bed <your bed format file> -s -fo <Output file>
 ```
 ## Step 2.Training and evaluation
-### It will output the trained model in the output directory.
+
 ```shell
 python ./src/train.py --out <output directory> --seq <sequence encoding file> --label <label encoding file> --val 0.1 <--random 0.2 > <--fold 10 >
 ```
-### Arguments
+### It will output the trained model in the output directory.
+#### Arguments
 
 output directory: the output path of the model 
   
@@ -62,11 +61,11 @@ label encoding file: one of the preprocessed output files
 --fold: number of folds for cross validation( optional)
 
 ## Step 3.Prediction
-### It will output the results in the output directory(0: nonOCRs,1:OCRs).
 ```shell
 python ./src/predict.py --out <output directory> --seq <sequence> --model <model file>
-```  
-### Arguments
+```
+### It will output the results in the output directory(0: nonOCRs,1:OCRs).
+#### Arguments
 
 output directory: the output path of prediction 
 
@@ -80,19 +79,19 @@ model file: the trained model(.hdf5)
 ```shell
 python ./src/preprocess.py --out ./example/ --pos ./example/pos_test.fa --neg ./example/neg_test.fa
 ```
-It will output two files including the sequence encoding file(./example/data_onehot.npy) and the label encoding file(./example/label.npy)
+#### It will output two files including the sequence encoding file(./example/data_onehot.npy) and the label encoding file(./example/label.npy)
 
 ### 2.Training and evaluation
 ```shell
 python ./src/train.py --out ./example/ --seq ./example/data_onehot.npy  --label ./example/label.npy --val 0.1 --random 0.2
 ```
-It will output the trained model(./example/model_random.hdf5)
+#### It will output the trained model(./example/model_random.hdf5)
 
 ### 3.Prediction
 ```shell
 python ./src/predict.py --out ./example --seq ./example/test.fa --model ./example/model_random.hdf5
 ```  
- It will output the results(./example/pred.csv)
+ #### It will output the results(./example/pred.csv)
 
 
 
