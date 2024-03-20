@@ -11,6 +11,7 @@ git clone https://github.com/jasonzhao371/DeepOCR.git
 - bedtools (https://bedtools.readthedocs.io/en/latest/)
 - h5py (pip install h5py)
 
+#Instructions
 ## Preprocessing
 
 ```shell
@@ -78,7 +79,7 @@ model file: the trained model(.hdf5)
 ### Notes
 It will output the results in the output directory(0: nonOCRs,1:OCRs)
 
-## Example for users
+# Example for users
 If users wish to utilize their own datasets, here is a straightforward example illustrating the entire process from data preparation to complete model training and prediction (all files are located in the 'example' directory).
 ### 1.preprocessing
 ```shell
