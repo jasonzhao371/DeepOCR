@@ -6,10 +6,10 @@ a multi-species deep learning-based frame-work for accurate identification of op
 git clone https://github.com/jasonzhao371/DeepOCR.git
 
 ## Requirements
-- Scikit-learn(http://scikit-learn.org/)
+- Scikit-learn (http://scikit-learn.org/)
 - tensorflow-gpu (https://pypi.org/project/tensorflow-gpu/)
-- bedtools
-- h5py
+- bedtools (https://bedtools.readthedocs.io/en/latest/)
+- h5py (pip install h5py)
 
 ## Preprocessing
 
