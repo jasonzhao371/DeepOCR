@@ -88,7 +88,7 @@ It will output two files including the sequence encoding file(./example/data_one
 
 ### 2.Training and evaluation
 ```shell
-python ./src/train.py --out ./example/ --seq ./example/data_onehot.npy  --label ./example/label.npy --val 0.1 --random 0.1
+python ./src/train.py --out ./example/ --seq ./example/data_onehot.npy  --label ./example/label.npy --val 0.1 --random 0.2
 ```
 It will output the trained model(./example/model_random.hdf5)
 
