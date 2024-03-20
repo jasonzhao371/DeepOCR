@@ -71,7 +71,7 @@ python ./src/predict.py --out <output directory> --seq <sequence> --model <model
 
 output directory: the output path of prediction 
 
-sequence : the sequence to predict(.fa)
+sequence : the sequences to predict(.fa)
 
 model file: the trained model(.hdf5)
 
