@@ -37,7 +37,7 @@ negative samples file: negative samples(.fa)
  ```
 It will output two files including the sequence encoding file and the label encoding file in the output directory 
 ### Notes
-IF your input file is in bed format,first you need to extract the fasta sequence using bedtools.
+If your input file is in bed format,first you need to extract the fasta sequence using bedtools.
 ```
 $ bedtools getfasta -fi <Reference Genome> -bed <your bed format file> -s -fo <Output file>
 ```
@@ -79,7 +79,7 @@ model file: the trained model(.hdf5)
 It will output the results in the output directory(0: nonOCRs,1:OCRs)
 
 ## Example for users
-
+If users wish to utilize their own datasets, here is a straightforward example illustrating the entire process from data preparation to complete model training and prediction (all files are located in the 'example' directory).
 ### 1.preprocessing
 ```shell
 python ./src/preprocess.py --out ./example/ --pos ./example/pos_test.fa --neg ./example/neg_test.fa
