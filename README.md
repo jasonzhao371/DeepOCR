@@ -1,4 +1,4 @@
-# DeepOCR:                                          
+# DeepOCR                                          
 # a multi-species deep learning-based framework for accurate identification of open chromatin regions in livestock
 
 
