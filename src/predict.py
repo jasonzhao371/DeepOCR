@@ -85,7 +85,13 @@ def main():
     pred_rate = model_b.predict(data)
     pred = np.where(pred_rate > 0.5, 1, 0)
     pred=pd.DataFrame(pred)
-    pred.to_csv(out+"pred.csv",index=False,header=None,sep=",")
+    with open(seq, 'r') as file:
+      lines = file.readlines()
+      position = [line.strip() for line in lines if line.startswith('>')]
+    df = pd.DataFrame(position)
+    merged_df = pd.concat([df, pred], axis=1)
+    merged_df.to_csv(out+"pred.csv",index=False,header=None,sep=",")
+
     
    
     
