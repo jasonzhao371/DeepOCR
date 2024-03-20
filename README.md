@@ -96,7 +96,7 @@ It will output the trained model(./example/model_random.hdf5)
 ```shell
 python ./src/predict.py --out ./example --seq ./example/test.fa --model ./example/model_random.hdf5
 ```  
- It will output the results(./example/)
+ It will output the results(./example/pred.csv)
 
 
 
