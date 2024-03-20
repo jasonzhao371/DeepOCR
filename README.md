@@ -14,6 +14,7 @@ git clone https://github.com/jasonzhao371/DeepOCR.git
 # Instructions
 
 ## Step 1.Preprocessing
+### To preprocess the sequences, use the following command:
 ```shell
 python ./src/preprocess.py --out <output directory> --pos <positive samples file> --neg <negative samples file>
 ```
@@ -41,7 +42,7 @@ If your input file is in bed format,first you need to extract the fasta sequence
 $ bedtools getfasta -fi <Reference Genome> -bed <your bed format file> -s -fo <Output file>
 ```
 ## Step 2.Training and evaluation
-
+### To train and evaluate DeepOCR, use the following command:
 ```shell
 python ./src/train.py --out <output directory> --seq <sequence encoding file> --label <label encoding file> --val 0.1 <--random 0.2 > <--fold 10 >
 ```
@@ -61,6 +62,7 @@ python ./src/train.py --out <output directory> --seq <sequence encoding file> --
 - fold: number of folds for cross validation( optional)
 
 ## Step 3.Prediction
+### To predict on DeepOCR, use the following command:
 ```shell
 python ./src/predict.py --out <output directory> --seq <sequence> --model <model file>
 ```
