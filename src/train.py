@@ -85,7 +85,7 @@ def trainDeepOCR(out, train_seq, train_label, test_seq, test_label,val_split,i):
     score = model_b.evaluate(test_seq, test_label, verbose=0)
     acc = score[1]
     pred_rate = model_b.predict(test_seq)
-    fpr1, tpr1, thresholds = metrics.roc_curve(test_seq, pred_rate)
+    fpr1, tpr1, thresholds = metrics.roc_curve(test_label, pred_rate)
     auc = metrics.auc(fpr1, tpr1)
     pred = np.where(pred_rate > 0.5, 1, 0)
     f1 = f1_score(test_label, pred)
