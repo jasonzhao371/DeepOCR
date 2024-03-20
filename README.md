@@ -14,6 +14,7 @@ git clone https://github.com/jasonzhao371/DeepOCR.git
 # Instructions
 
 ## 1.Preprocessing
+### It will output two files including the sequence encoding file and the label encoding file in the output directory ：
 
 ```shell
 python ./src/preprocess.py --out <output directory> --pos <positive samples file> --neg <negative samples file>
@@ -37,14 +38,13 @@ negative samples file: negative samples(.fa)
  >Chr:start-end
   AGGTGTTAACTTTTAAAGAAGAATATATTAAGTTATGCCTACCGTGGAATAAGGT...
  ```
-It will output two files including the sequence encoding file and the label encoding file in the output directory 
 ### Notes
 If your input file is in bed format,first you need to extract the fasta sequence using bedtools.
 ```
 $ bedtools getfasta -fi <Reference Genome> -bed <your bed format file> -s -fo <Output file>
 ```
 ## 2.Training and evaluation
-  
+### It will output the trained model in the output directory：
 ```shell
 python ./src/train.py --out <output directory> --seq <sequence encoding file> --label <label encoding file> --val 0.1 <--random 0.2 > <--fold 10 >
 ```
@@ -62,10 +62,8 @@ label encoding file: one of the preprocessed output files
   
 --fold: number of folds for cross validation( optional)
 
-### Notes
-It will output the trained model in the output directory
-
 ## 3.Prediction
+### It will output the results in the output directory(0: nonOCRs,1:OCRs):
 ```shell
 python ./src/predict.py --out <output directory> --seq <sequence> --model <model file>
 ```  
@@ -77,12 +75,9 @@ sequence : the sequences to predict(.fa)
 
 model file: the trained model(.hdf5)
 
-### Notes
-It will output the results in the output directory(0: nonOCRs,1:OCRs)
-
 # Example for users
-If users wish to utilize their own datasets, here is a straightforward example illustrating the entire process from data preparation to complete model training and prediction (all files are located in the 'example' directory).
-### 1.preprocessing
+## If users wish to utilize their own datasets, here is a straightforward example illustrating the entire process from data preparation to complete model training and prediction (all files are located in the 'example' directory):
+### 1.Preprocessing
 ```shell
 python ./src/preprocess.py --out ./example/ --pos ./example/pos_test.fa --neg ./example/neg_test.fa
 ```
