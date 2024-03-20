@@ -11,7 +11,7 @@ git clone https://github.com/jasonzhao371/DeepOCR.git
 - bedtools (https://bedtools.readthedocs.io/en/latest/)
 - h5py (pip install h5py)
 
-#Instructions
+# Instructions
 ## Preprocessing
 
 ```shell
