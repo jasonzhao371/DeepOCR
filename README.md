@@ -3,7 +3,7 @@ a multi-species deep learning-based frame-work for accurate identification of op
 
 
 ## INSTALLATION 
-git clone https://github.com/jasonzhao371/DeepOCR/
+git clone https://github.com/jasonzhao371/DeepOCR.git
 
 ## Requirements
 - Scikit-learn(http://scikit-learn.org/)
@@ -41,6 +41,12 @@ IF your input file is in bed format,first you need to extract the fasta sequence
 ```
 $ bedtools getfasta -fi <Reference Genome> -bed <your bed format file> -s -fo <Output file>
 ```
+### Example for users
+
+
+
+
+
 
 ## Training and evaluation
   
