@@ -20,9 +20,9 @@ python ./src/preprocess.py --out <output directory> --pos <positive samples file
 ### It will output two files including the sequence encoding file and the label encoding file in the output directory.
 #### Arguments
   
-<output directory>: the output file path of the final processed data(npy format)
+output directory: the output file path of the final processed data(npy format)
   
-<positive samples file>  : positive samples(.fa)
+positive samples file: positive samples(.fa)
   
  ```
  e.g.
