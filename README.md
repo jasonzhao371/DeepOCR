@@ -41,13 +41,6 @@ IF your input file is in bed format,first you need to extract the fasta sequence
 ```
 $ bedtools getfasta -fi <Reference Genome> -bed <your bed format file> -s -fo <Output file>
 ```
-### Example for users
-
-
-
-
-
-
 ## Training and evaluation
   
 ```shell
@@ -77,10 +70,33 @@ python ./src/predict.py --out <output directory> --seq <sequence> --model <model
 ### Arguments
 
 output directory: the output path of prediction 
-  
+
 sequence : the sequence to predict(.fa)
 
 model file: the trained model(.hdf5)
 
 ### Notes
 It will output the results in the output directory(0: nonOCRs,1:OCRs)
+
+## Example for users
+
+### 1.preprocessing
+```shell
+python ./src/preprocess.py --out ./example/ --pos ./example/pos_test.fa --neg ./example/neg_test.fa
+```
+It will output two files including the sequence encoding file(./example/data_onehot.npy) and the label encoding file(./example/label.npy)
+
+### 2.Training and evaluation
+```shell
+python ./src/train.py --out ./example/ --seq ./example/data_onehot.npy  --label ./example/label.npy --val 0.1 --random 0.1
+```
+It will output the trained model(./example/model_random.hdf5)
+
+### 3.Prediction
+```shell
+python ./src/predict.py --out ./example --seq ./example/test.fa --model ./example/model_random.hdf5
+```  
+ It will output the results(./example/)
+
+
+
