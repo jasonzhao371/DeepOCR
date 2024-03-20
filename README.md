@@ -8,7 +8,7 @@ git clone https://github.com/jasonzhao371/DeepOCR.git
 - Scikit-learn (http://scikit-learn.org/)
 - tensorflow-gpu (https://pypi.org/project/tensorflow-gpu/)
 - bedtools (https://bedtools.readthedocs.io/en/latest/)
-- h5py (pip install h5py)
+- h5py (https://pypi.org/project/h5py/)
 
 # Instructions
 
