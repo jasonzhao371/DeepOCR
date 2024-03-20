@@ -44,7 +44,7 @@ $ bedtools getfasta -fi <Reference Genome> -bed <your bed format file> -s -fo <O
 ## Training and evaluation
   
 ```shell
-python ./src/train.py --out <output directory> --seq <sequence encoding file> --label <label encoding file> --val 0.1 <--random 0.1> <--fold 10>
+python ./src/train.py --out <output directory> --seq <sequence encoding file> --label <label encoding file> --val 0.1 <--random 0.2> <--fold 10>
 ```
 ### Arguments
 
