@@ -90,10 +90,10 @@ def trainDeepOCR(out, train_seq, train_label, test_seq, test_label,val_split,i):
     pred = np.where(pred_rate > 0.5, 1, 0)
     f1 = f1_score(test_label, pred)
     cm = confusion_matrix(test_label, pred)
-    tp = cm[0, 0]
-    fp = cm[1, 0]
-    tn = cm[1, 1]
-    fn = cm[0, 1]
+    tn = cm[0, 0]
+    fn = cm[1, 0]
+    tp = cm[1, 1]
+    fp = cm[0, 1]
     MCC = float((tp * tn - fp * fn)) / math.sqrt((tp + fp) * (tp + fn) * (tn + fp) * (tn + fn)) if (tp + fp) * (
                 tp + fn) * (tn + fp) * (tn + fn) != 0 else 'NA'
     total1 = sum(sum(cm))
