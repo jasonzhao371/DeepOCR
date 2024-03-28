@@ -97,8 +97,8 @@ def trainDeepOCR(out, train_seq, train_label, test_seq, test_label,val_split,i):
     MCC = float((tp * tn - fp * fn)) / math.sqrt((tp + fp) * (tp + fn) * (tn + fp) * (tn + fn)) if (tp + fp) * (
                 tp + fn) * (tn + fp) * (tn + fn) != 0 else 'NA'
     total1 = sum(sum(cm))
-    Se = cm[0, 0] / (cm[0, 0] + cm[0, 1])
-    Sp = cm[1, 1] / (cm[1, 0] + cm[1, 1])
+    Se = tp / (tp + fn)
+    Sp = tn / (tn+fp)
     return acc,auc,Se,Sp,MCC,f1
 
 
